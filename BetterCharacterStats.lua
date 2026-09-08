@@ -186,6 +186,14 @@ function BCS:OnEvent()
 		BCS.needScanSkills = true
 		BCS.needUpdate = true
 
+		-- CONFIRMED IN-GAME (user report, 2026-09-08): a client crash during
+		-- logout can leave BCSConfig explicitly saved as literal "= nil"
+		-- (WoW faithfully serializes whatever's in memory at save time) --
+		-- indexing it unguarded here threw "attempt to index global
+		-- 'BCSConfig' (a nil value)" and aborted this whole ADDON_LOADED
+		-- handler, so the addon never loaded at all.
+		BCSConfig = BCSConfig or {}
+
 		IndexLeft = BCSConfig["DropdownLeft"] or BCS.PLAYERSTAT_DROPDOWN_OPTIONS[1]
 		IndexRight = BCSConfig["DropdownRight"] or BCS.PLAYERSTAT_DROPDOWN_OPTIONS[2]
 
