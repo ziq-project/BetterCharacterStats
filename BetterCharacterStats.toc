@@ -1,5 +1,5 @@
 ## Interface: 11200
-## Title: BetterCharacterStats 1.15.3
+## Title: BetterCharacterStats |cff7fff7f - Project Legacy|r
 ## Author: moh, Bennylava, Lexie, Spit, Pepopo, MarcelineVQ | a Project Legacy fork by ziq
 ## Version: 1.15.3
 ## Notes: Improved character statistics inside Character Info panel.
